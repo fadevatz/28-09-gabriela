@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriela Rodrigues Voltolini | Psicóloga Clínica - Atendimento Online</title>
+  <meta name="description" content="Psicoterapia online para mulheres e pessoas LGBTQIA+. Um espaço seguro para se compreender melhor e transformar o que já não faz sentido. CRP 06/229419.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%22100%22%20%22100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fraunces -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FDF8F5',
+              100: '#FBF0EB',
+              200: '#F7E0D6',
+              300: '#ECC4B3',
+              400: '#DC9D84',
+              500: '#C77555',
+              600: '#B0593B',
+              700: '#8E432A',
+              800: '#733724',
+              900: '#5F2E20',
+            },
+            sage: {
+              50: '#F4F7F4',
+              100: '#E6ECE5',
+              200: '#CFDBCF',
+              300: '#AFC3B0',
+              500: '#6E8E72',
+              700: '#465D49',
+            },
+            warm: {
+              bg: '#FAF7F2',
+              card: '#FFFFFF',
+              surface: '#F5EFE6',
+              text: '#2D2926',
+              muted: '#6E6760',
+            }
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 10px 30px -5px rgba(115, 55, 36, 0.07), 0 5px 15px -3px rgba(0, 0, 0, 0.03)',
+            'card': '0 20px 40px -12px rgba(142, 67, 42, 0.08)',
+            'float': '0 15px 35px -5px rgba(37, 211, 102, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: #FAF7F2;
+      color: #2D2926;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-editorial {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+
+    .glass-nav {
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    /* Subtil arco-íris sutil de acolhimento */
+    .pride-pill {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(245, 158, 11, 0.12), rgba(16, 185, 129, 0.12), rgba(59, 130, 246, 0.12), rgba(147, 51, 234, 0.12));
+      border: 1px solid rgba(220, 157, 132, 0.35);
+    }
+
+    .pride-accent-bar {
+      background: linear-gradient(90deg, #ff7a7a 0%, #ffc067 20%, #76d275 40%, #5eb8ff 60%, #ba8aff 80%, #ff80bf 100%);
+      height: 3px;
+    }
+
+    /* Animação suave para botão flutuante */
+    @keyframes pulse-subtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .pulse-btn {
+      animation: pulse-subtle 3s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-200 selection:text-brand-900 overflow-x-hidden">
+
+  <!-- Barra de Acolhimento e Inclusão no Topo -->
+  <div class="pride-accent-bar"></div>
+
+  <!-- Header / Barra de Navegação -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-brand-100/60 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo / Assinatura -->
+      <a href="#" class="flex flex-col group">
+        <span class="font-editorial text-xl sm:text-2xl font-medium tracking-tight text-brand-900 group-hover:text-brand-700 transition">
+          Gabriela Rodrigues Voltolini
+        </span>
+        <span class="text-xs uppercase tracking-widest text-brand-600 font-semibold flex items-center gap-1.5">
+          <span>Psicóloga Clínica</span>
+          <span class="inline-block w-1 h-1 rounded-full bg-brand-400"></span>
+          <span>CRP 06/229419</span>
+        </span>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-warm-muted">
+        <a href="#sobre" class="hover:text-brand-700 transition">Sobre Mim</a>
+        <a href="#para-quem" class="hover:text-brand-700 transition">Para Quem É</a>
+        <a href="#como-funciona" class="hover:text-brand-700 transition">Como Funciona</a>
+        <a href="#faq" class="hover:text-brand-700 transition">Dúvidas Frequentes</a>
+      </nav>
+
+      <!-- CTA Nav -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/5516999999999?text=Ol%C3%A1%20Gabriela!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20sess%C3%B5es%20de%20psicoterapia%20online."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-brand-700 hover:bg-brand-800 text-white shadow-soft transition-all duration-200 hover:-translate-y-0.5">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Agendar Conversa</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+    <!-- Efeito de iluminação suave de fundo -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-200/50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-24 w-96 h-96 bg-sage-200/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Coluna de Texto e Proposta de Valor -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badge Inclusivo -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full pride-pill text-xs md:text-sm font-medium text-brand-900">
+            <span class="text-base leading-none">🏳️‍🌈✨</span>
+            <span>Espaço Acolhedor, Seguro & Afirmativo</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+            <span class="text-brand-700 font-semibold">Atendimento 100% Online</span>
+          </div>
+
+          <!-- Headline Principal -->
+          <h1 class="font-editorial text-4xl sm:text-5xl lg:text-[3.5rem] font-medium leading-[1.15] text-brand-900 tracking-tight">
+            Para se compreender melhor e transformar o que já <span class="italic font-normal text-brand-600">não faz mais sentido</span>.
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-lg sm:text-xl text-warm-muted leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
+            Um refúgio terapêutico dedicado a mulheres e pessoas LGBTQIA+. Escuta ativa, livre de julgamentos, para apoiar sua jornada de autodescoberta, superação de angústias e reconstrução dos seus próprios limites.
+          </p>
+
+          <!-- Selos Rápidos de Confiança -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs sm:text-sm text-warm-text font-medium">
+            <div class="flex items-center gap-2 bg-white/70 px-3.5 py-1.5 rounded-lg border border-brand-100">
+              <i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i>
+              <span>CRP 06/229419</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/70 px-3.5 py-1.5 rounded-lg border border-brand-100">
+              <i data-lucide="video" class="w-4 h-4 text-brand-600"></i>
+              <span>Sessões Online para todo o Brasil e Exterior</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/70 px-3.5 py-1.5 rounded-lg border border-brand-100">
+              <i data-lucide="lock" class="w-4 h-4 text-brand-600"></i>
+              <span>Sigilo Ético Absoluto</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="https://wa.me/5516999999999?text=Ol%C3%A1%20Gabriela!%20Gostaria%20de%20dar%20o%20primeiro%20passo%20e%20agendar%20minha%20sess%C3%A3o%20online."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-semibold bg-brand-700 hover:bg-brand-800 text-white shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <i data-lucide="message-circle" class="w-5 h-5 text-emerald-300"></i>
+              <span>Agendar Minha Primeira Sessão</span>
+            </a>
+
+            <a href="#como-funciona"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-base font-medium text-brand-800 hover:text-brand-900 bg-brand-100/60 hover:bg-brand-200/60 transition">
+              <span>Como funciona a psicoterapia</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <p class="text-xs text-warm-muted/80 italic">
+            * O primeiro contato é leve e serve para esclarecer todas as suas dúvidas com carinho.
+          </p>
+        </div>
+
+        <!-- Coluna de Imagem / Retrato com Detalhes Visuais -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative w-full max-w-md">
+            
+            <!-- Moldura Orgânica com Borda Delicada -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-brand-100">
+              <img src="assets/images/gabriela-atendimento.png" 
+                   alt="Psicóloga Gabriela Rodrigues Voltolini em atendimento" 
+                   class="w-full h-[480px] sm:h-[530px] object-cover object-top hover:scale-[1.02] transition-transform duration-700">
+              
+              <!-- Gradiente de acabamento na base -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+
+              <!-- Legenda em card interno sobre a foto -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/60 shadow-lg text-left">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-editorial text-base font-semibold text-brand-900">Gabriela R. Voltolini</h3>
+                    <p class="text-xs text-warm-muted">Escuta ativa, acolhimento e sensibilidade</p>
+                  </div>
+                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-100 text-brand-700">
+                    <i data-lucide="heart" class="w-4 h-4 fill-brand-300"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Flutuante 1: Ambiente Afirmativo -->
+            <div class="absolute -top-4 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-card border border-brand-100/80 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-[11px] uppercase tracking-wider text-warm-muted font-bold">Livre de julgamentos</p>
+                <p class="text-xs font-semibold text-brand-900">Seu ritmo, sua verdade</p>
+              </div>
+            </div>
+
+            <!-- Card Flutuante 2: Formato Online Prático -->
+            <div class="absolute -bottom-5 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-card border border-brand-100/80 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0">
+                <i data-lucide="coffee" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-[11px] uppercase tracking-wider text-warm-muted font-bold">No seu cantinho</p>
+                <p class="text-xs font-semibold text-brand-900">Conforto & Praticidade</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Destaques / Valores Terapêuticos -->
+  <section class="py-12 bg-white/80 border-y border-brand-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+        
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-brand-100/80 text-brand-700 flex items-center justify-center shrink-0">
+            <i data-lucide="ear" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-brand-900 text-sm">Escuta Ativa</h4>
+            <p class="text-xs text-warm-muted mt-0.5">Espaço genuíno onde você é ouvida com profundidade.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+            <i data-lucide="rainbow" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-brand-900 text-sm">Afirmativa & Inclusiva</h4>
+            <p class="text-xs text-warm-muted mt-0.5">Acolhimento com orgulho para vivências femininas e LGBT+.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-brand-100/80 text-brand-700 flex items-center justify-center shrink-0">
+            <i data-lucide="laptop" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-brand-900 text-sm">Flexibilidade Total</h4>
+            <p class="text-xs text-warm-muted mt-0.5">Sessões online de onde estiver, sem trânsito ou deslocamento.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+            <i data-lucide="badge-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-brand-900 text-sm">Rigor & Ética</h4>
+            <p class="text-xs text-warm-muted mt-0.5">Psicóloga diplomada e inscrita regularmente no CRP/SP.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Para Quem É (Identificação e Validação Emocional) -->
+  <section id="para-quem" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Cabeçalho da Seção -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase tracking-widest text-brand-600 font-bold bg-brand-100/70 px-3 py-1 rounded-full">
+          Identificação & Acolhimento
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl text-brand-900 font-medium">
+          A terapia é para você que...
+        </h2>
+        <p class="text-warm-muted text-base">
+          Muitas vezes carregamos sozinhos cobranças, expectativas e angústias que tornam a caminhada pesada. Você não precisa enfrentar isso sem apoio.
+        </p>
+      </div>
+
+      <!-- Grid de Identificação -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/70 shadow-soft hover:shadow-card hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center">
+              <i data-lucide="battery-low" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-editorial text-xl text-brand-900 font-medium">
+              Sente cansaço e sobrecarga constantes
+            </h3>
+            <p class="text-warm-muted text-sm leading-relaxed">
+              Sensação de estar sempre equilibrando muitos pratos, atendendo às expectativas de todo mundo e deixando as próprias necessidades para depois.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-50 flex items-center gap-2 text-xs font-semibold text-brand-600">
+            <span>Acolher limites e respirar</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/70 shadow-soft hover:shadow-card hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center">
+              <i data-lucide="compass" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-editorial text-xl text-brand-900 font-medium">
+              Vive conflitos com identidade & relações
+            </h3>
+            <p class="text-warm-muted text-sm leading-relaxed">
+              Dúvidas, medos, processos de aceitação, transição ou desafios em se posicionar perante a família, amigos e relacionamentos afetivos.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-50 flex items-center gap-2 text-xs font-semibold text-sage-700">
+            <span>Um espaço afirmativo e livre</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/70 shadow-soft hover:shadow-card hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center">
+              <i data-lucide="repeat" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-editorial text-xl text-brand-900 font-medium">
+              Percebe que repete ciclos desgastantes
+            </h3>
+            <p class="text-warm-muted text-sm leading-relaxed">
+              Padrões de comportamento, inseguranças ou relações que trazem dor e que você deseja transformar para construir algo saudável.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-50 flex items-center gap-2 text-xs font-semibold text-brand-600">
+            <span>Transformar o que já não faz sentido</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/70 shadow-soft hover:shadow-card hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-sage-100 text-sage-700 flex items-center justify-center">
+              <i data-lucide="message-square" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-editorial text-xl text-brand-900 font-medium">
+              Dificuldade em dizer "não" e se expressar
+            </h3>
+            <p class="text-warm-muted text-sm leading-relaxed">
+              Medo do confronto, sentimento de culpa ao impor limites saudáveis e necessidade de desenvolver uma comunicação mais assertiva e firme.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-50 flex items-center gap-2 text-xs font-semibold text-sage-700">
+            <span>Desenvolvimento da assertividade</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/70 shadow-soft hover:shadow-card hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center">
+              <i data-lucide="cloud-rain" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-editorial text-xl text-brand-900 font-medium">
+              Ansiedade, angústias e pensamentos acelerados
+            </h3>
+            <p class="text-warm-muted text-sm leading-relaxed">
+              Mente inquieta, preocupação com o futuro, sensação de aperto no peito e dificuldade em relaxar ou viver o momento presente com leveza.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-50 flex items-center gap-2 text-xs font-semibold text-brand-600">
+            <span>Estratégias de regulação emocional</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Chamada de Conversão -->
+        <div class="bg-gradient-to-br from-brand-700 to-brand-900 p-8 rounded-3xl shadow-card text-white flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-editorial text-2xl text-white font-medium">
+              Busca por autoconhecimento profundo
+            </h3>
+            <p class="text-brand-100 text-sm leading-relaxed">
+              Você não precisa esperar uma crise para se cuidar. A psicoterapia é um investimento contínuo na sua paz, liberdade e potência de ser quem você é.
+            </p>
+          </div>
+          <div class="mt-6 pt-4">
+            <a href="https://wa.me/5516999999999?text=Ol%C3%A1%20Gabriela!%20Gostaria%20de%20conversar%20sobre%20a%20psicoterapia."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-white/20 hover:bg-white/30 px-5 py-2.5 rounded-full transition">
+              <span>Dar o primeiro passo</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Mim / A Profissional -->
+  <section id="sobre" class="py-20 md:py-28 bg-warm-surface/60 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
+        
+        <!-- Foto Pessoal / Retrato Secundário -->
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="relative max-w-sm mx-auto">
+            
+            <div class="relative rounded-3xl overflow-hidden shadow-card border-4 border-white bg-brand-100">
+              <img src="assets/images/gabriela-perfil.png" 
+                   alt="Gabriela Rodrigues Voltolini - Psicóloga" 
+                   class="w-full h-[450px] object-cover object-center">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-900/60 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 text-white text-left">
+                <p class="font-editorial text-xl font-medium">Gabriela Rodrigues Voltolini</p>
+                <p class="text-xs text-brand-200 mt-0.5">Psicóloga • CRP 06/229419</p>
+                <div class="mt-3 inline-flex items-center gap-2 text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">
+                  <span>🏳️‍🌈 Escuta humanizada e empática</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detalhe decorativo atrás da foto -->
+            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-300/40 rounded-3xl -z-10 blur-xl"></div>
+          </div>
+        </div>
+
+        <!-- Biografia e Bagagem Profissional -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-xs font-semibold text-brand-800">
+            <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+            <span>Conheça sua Psicóloga</span>
+          </div>
+
+          <h2 class="font-editorial text-3xl sm:text-4xl text-brand-900 font-medium leading-tight">
+            "Acredito em uma psicologia viva, onde sua história é ouvida com respeito em cada detalhe."
+          </h2>
+
+          <div class="space-y-4 text-warm-text leading-relaxed text-sm sm:text-base">
+            <p>
+              Olá! Sou <strong>Gabriela Rodrigues Voltolini</strong>, psicóloga graduada com foco em comunicação assertiva e escuta ativa. Meu trabalho clínico nasceu do desejo de proporcionar um espaço genuinamente seguro para mulheres e pessoas LGBTQIA+ que buscam se compreender em profundidade e reconstruir aquilo que já não ressoa com sua verdade.
+            </p>
+            <p>
+              Minha trajetória profissional une a sensibilidade do atendimento individual a uma rica bagagem institucional: atuei na área de medicina do tráfego na aplicação de avaliações psicológicas e laudos, liderei pessoas e estratégias de engajamento no RH, e atuei no setor educacional bilíngue com atendimento a diferentes faixas etárias.
+            </p>
+            <p class="text-warm-muted">
+              Durante minha formação, passei por instituições de grande relevância clínica, como o <strong>Hospital Psiquiátrico Santa Teresa</strong>, a <strong>Clínica-Escola de Psicologia</strong>, a <strong>Santa Casa de Misericórdia de Ribeirão Preto</strong> e a <strong>Escola Domingos Adilson Canesin</strong>.
+            </p>
+            <p>
+              Essa vivência me deu a tranquilidade de conduzir sessões estruturadas, humanizadas e orientadas a resultados reais para a sua vida cotidiana.
+            </p>
+          </div>
+
+          <!-- Pilares da Minha Prática Clínica -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-brand-100/60 shadow-sm">
+              <div class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center shrink-0">
+                <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-brand-900 text-sm">Escuta Sem Julgamentos</h4>
+                <p class="text-xs text-warm-muted mt-0.5">Sua dor e seus sentimentos sempre serão validados.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-brand-100/60 shadow-sm">
+              <div class="w-8 h-8 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center shrink-0">
+                <i data-lucide="message-circle-heart" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-brand-900 text-sm">Comunicação Assertiva</h4>
+                <p class="text-xs text-warm-muted mt-0.5">Aprenda a expressar o que sente com firmeza e carinho.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Sobre -->
+          <div class="pt-2">
+            <a href="https://wa.me/5516999999999?text=Ol%C3%A1%20Gabriela!%20Li%20sua%20apresenta%C3%A7%C3%A3o%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-brand-700 hover:bg-brand-800 text-white shadow-soft transition">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Conversar com a Gabriela</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Funciona o Atendimento Online (Passo a Passo Descomplicado) -->
+  <section id="como-funciona" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase tracking-widest text-brand-600 font-bold bg-brand-100/70 px-3 py-1 rounded-full">
+          Simplicidade & Praticidade
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl text-brand-900 font-medium">
+          Como funciona a psicoterapia online?
+        </h2>
+        <p class="text-warm-muted text-base">
+          Cuidar de si mesmo nunca foi tão acessível. Três passos simples para iniciar o seu acompanhamento no conforto do seu espaço.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        
+        <!-- Passo 1 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/80 shadow-soft relative flex flex-col items-start">
+          <div class="w-12 h-12 rounded-2xl bg-brand-700 text-white flex items-center justify-center font-editorial text-xl font-bold mb-6">
+            1
+          </div>
+          <h3 class="font-editorial text-xl font-semibold text-brand-900 mb-2">Primeiro Contato</h3>
+          <p class="text-warm-muted text-sm leading-relaxed mb-4">
+            Você clica no botão do WhatsApp e me envia uma mensagem. Alinhamos seus melhores dias e horários e tiramos todas as suas dúvidas iniciais sobre investimento e funcionamento.
+          </p>
+          <div class="mt-auto text-xs text-brand-600 font-medium flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Sem burocracias</span>
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/80 shadow-soft relative flex flex-col items-start">
+          <div class="w-12 h-12 rounded-2xl bg-brand-700 text-white flex items-center justify-center font-editorial text-xl font-bold mb-6">
+            2
+          </div>
+          <h3 class="font-editorial text-xl font-semibold text-brand-900 mb-2">A Sessão Online</h3>
+          <p class="text-warm-muted text-sm leading-relaxed mb-4">
+            No dia e horário marcado, nos encontramos em uma sala de vídeo segura e criptografada (Google Meet). Você só precisa de um celular ou computador, conexão à internet e fones de ouvido.
+          </p>
+          <div class="mt-auto text-xs text-brand-600 font-medium flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>50 minutos de dedicação total</span>
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-100/80 shadow-soft relative flex flex-col items-start">
+          <div class="w-12 h-12 rounded-2xl bg-brand-700 text-white flex items-center justify-center font-editorial text-xl font-bold mb-6">
+            3
+          </div>
+          <h3 class="font-editorial text-xl font-semibold text-brand-900 mb-2">Construção & Transformação</h3>
+          <p class="text-warm-muted text-sm leading-relaxed mb-4">
+            Sessão após sessão, trabalhamos suas dores, padrões de comportamento e novos caminhos de vida. Um processo contínuo que te devolve a autonomia, a leveza e a autoestima.
+          </p>
+          <div class="mt-auto text-xs text-brand-600 font-medium flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Seu ritmo respeitado</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Caixa de Destaque sobre Sigilo -->
+      <div class="mt-12 bg-sage-50 border border-sage-200/80 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+        <div class="w-14 h-14 rounded-2xl bg-sage-200 text-sage-700 flex items-center justify-center shrink-0">
+          <i data-lucide="shield" class="w-7 h-7"></i>
+        </div>
+        <div class="text-left space-y-1">
+          <h4 class="font-editorial text-lg font-semibold text-sage-700">Privacidade, Sigilo e Código de Ética</h4>
+          <p class="text-xs sm:text-sm text-warm-muted leading-relaxed">
+            Todas as sessões são protegidas pelo rigoroso Código de Ética Profissional do Psicólogo (CFP). Nada do que é dito ou trabalhado em sessão é compartilhado com terceiros. Você está em um ambiente absolutamente seguro.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Perguntas Frequentes (FAQ) com Accordion Interativo -->
+  <section id="faq" class="py-20 md:py-28 bg-white/70 border-t border-brand-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase tracking-widest text-brand-600 font-bold bg-brand-100/70 px-3 py-1 rounded-full">
+          Tire suas dúvidas
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl text-brand-900 font-medium">
+          Perguntas Frequentes
+        </h2>
+        <p class="text-warm-muted text-base">
+          Tudo o que você precisa saber antes de dar início ao seu processo terapêutico.
+        </p>
+      </div>
+
+      <div class="space-y-4" id="faq-accordion">
+        
+        <!-- FAQ 1 -->
+        <div class="border border-brand-100 rounded-2xl overflow-hidden bg-white shadow-sm transition">
+          <button type="button" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-brand-900 hover:text-brand-700 transition">
+            <span class="text-base sm:text-lg">Como funciona a primeira sessão?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-sm text-warm-muted leading-relaxed border-t border-brand-50 pt-3">
+            O primeiro encontro é acolhedor e focado em te escutar. Você trará o que te motivou a buscar ajuda e o que está vivenciando no momento. Eu explicarei como trabalho, alinharemos a frequência e combinaremos o melhor formato para a sua rotina. É um espaço livre de expectativas pesadas.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-brand-100 rounded-2xl overflow-hidden bg-white shadow-sm transition">
+          <button type="button" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-brand-900 hover:text-brand-700 transition">
+            <span class="text-base sm:text-lg">O atendimento online tem a mesma eficácia do presencial?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-sm text-warm-muted leading-relaxed border-t border-brand-50 pt-3">
+            Sim! Diversos estudos científicos e o próprio Conselho Federal de Psicologia (CFP) comprovam que o atendimento online tem a mesma profundidade e eficácia terapêutica do presencial, com o benefício extra do conforto, economia de tempo em trânsito e possibilidade de ser atendido no seu próprio espaço de segurança.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-brand-100 rounded-2xl overflow-hidden bg-white shadow-sm transition">
+          <button type="button" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-brand-900 hover:text-brand-700 transition">
+            <span class="text-base sm:text-lg">Você atende convênio ou plano de saúde?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-sm text-warm-muted leading-relaxed border-t border-brand-50 pt-3">
+            Os atendimentos são exclusivamente particulares, o que garante total dedicação e tempo de qualidade para cada paciente. No entanto, forneço recibo detalhado que você pode apresentar ao seu plano de saúde para solicitar <strong>reembolso</strong> (a maioria dos convênios cobre sessões de psicoterapia mediante reembolso).
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-brand-100 rounded-2xl overflow-hidden bg-white shadow-sm transition">
+          <button type="button" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-brand-900 hover:text-brand-700 transition">
+            <span class="text-base sm:text-lg">Quanto tempo dura a sessão e qual a frequência?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-sm text-warm-muted leading-relaxed border-t border-brand-50 pt-3">
+            Cada sessão tem a duração de 50 minutos. A frequência recomendada é semanal, o que permite o vínculo terapêutico adequado e o avanço contínuo nas reflexões e mudanças desejadas.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="border border-brand-100 rounded-2xl overflow-hidden bg-white shadow-sm transition">
+          <button type="button" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-semibold text-brand-900 hover:text-brand-700 transition">
+            <span class="text-base sm:text-lg">O que eu preciso para realizar minha consulta online?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-sm text-warm-muted leading-relaxed border-t border-brand-50 pt-3">
+            Basta estar em um cômodo privativo onde você se sinta confortável para falar à vontade, ter uma conexão estável de internet e utilizar fones de ouvido para garantir seu sigilo e melhor qualidade sonora.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <p class="text-sm text-warm-muted">
+          Ainda com alguma dúvida específica? Fale comigo diretamente pelo WhatsApp:
+        </p>
+        <a href="https://wa.me/5516999999999?text=Ol%C3%A1%20Gabriela!%20Fiquei%20com%20uma%20d%C3%BAvida%20sobre%20a%20terapia."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-brand-700 hover:text-brand-900 underline underline-offset-4">
+          <span>Enviar mensagem no WhatsApp</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Final / Chamada de Encerramento Acolhedora -->
+  <section class="py-20 md:py-28 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-950 rounded-3xl p-8 sm:p-14 text-white text-center relative overflow-hidden shadow-2xl">
+        
+        <!-- Elementos de iluminação suave decorativos -->
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-sage-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-brand-200 text-xs font-semibold backdrop-blur-md">
+            <span>🌱 Transforme sua relação consigo mesma</span>
+          </div>
+
+          <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight">
+            Você não precisa carregar o peso do mundo em silêncio.
+          </h2>
+
+          <p class="text-brand-200 text-base sm:text-lg font-light leading-relaxed">
+            Dê a si mesma a oportunidade de viver com mais clareza, limites saudáveis e afeto pela sua própria história. Estou aqui para caminhar ao seu lado.
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/5516999999999?text=Ol%C3%A1%20Gabriela!%20Gostaria%20de%20iniciar%20minha%20psicoterapia%20online."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-semibold bg-white text-brand-900 hover:bg-brand-50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <i data-lucide="message-circle" class="w-5 h-5 text-emerald-600"></i>
+              <span>Agendar Minha Sessão via WhatsApp</span>
+            </a>
+          </div>
+
+          <p class="text-xs text-brand-300/80 pt-2">
+            Atendimento online para todo o Brasil e brasileiros no exterior • CRP 06/229419
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-warm-surface border-t border-brand-100/80 py-12 text-warm-muted text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        
+        <div>
+          <p class="font-editorial text-lg font-semibold text-brand-900">
+            Gabriela Rodrigues Voltolini
+          </p>
+          <p class="text-xs text-warm-muted mt-1">
+            Psicóloga Clínica • CRP 06/229419 • Atendimento Psicológico Online
+          </p>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="#sobre" class="hover:text-brand-700 transition">Sobre Mim</a>
+          <a href="#para-quem" class="hover:text-brand-700 transition">Para Quem É</a>
+          <a href="#como-funciona" class="hover:text-brand-700 transition">Como Funciona</a>
+          <a href="#faq" class="hover:text-brand-700 transition">Dúvidas</a>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-brand-200/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-warm-muted/80">
+        <p>
+          © <span id="year"></span> Gabriela Rodrigues Voltolini. Todos os direitos reservados.
+        </p>
+        <p class="italic">
+          Em caso de crise ou emergência emocional imediata, ligue 188 (CVV) ou procure uma unidade de pronto atendimento.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante de WhatsApp -->
+  <a href="https://wa.me/5516999999999?text=Ol%C3%A1%20Gabriela!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20sess%C3%B5es%20online."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="pulse-btn fixed bottom-6 right-6 z-50 inline-flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-float hover:shadow-2xl transition duration-300 group"
+     aria-label="Fale comigo pelo WhatsApp">
+    <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+    <span class="hidden sm:inline">Agendar Consulta</span>
+  </a>
+
+  <!-- Scripts Interativos -->
+  <script>
+    // Inicialização dos ícones Lucide
+    lucide.createIcons();
+
+    // Ano dinâmico no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Interatividade do Accordion FAQ
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('[data-lucide="chevron-down"]');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Fecha todos os outros accordions
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-toggle [data-lucide="chevron-down"]').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
